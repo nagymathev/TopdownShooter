@@ -7,13 +7,14 @@ public class Health : MonoBehaviour
     public float health;
     public int scoreReward = 100;
 
-    private GameObject scoreBoard;
+    //private GameObject scoreBoard;
+    Score scorecomponent;
 
     // Start is called before the first frame update
     void Start()
     {
-        int score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>().score;
-        //Score score = scoreBoard.GetComponent<Score>();
+         scorecomponent = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
+        //score = score.GetComponent<Score>();
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class Health : MonoBehaviour
     {
         if (health <= 0)
         {
-            score += scoreReward;
+            scorecomponent.score += scoreReward;
             OnKill();
         }
 
