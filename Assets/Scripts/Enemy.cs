@@ -9,12 +9,16 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 movement;
 
+    PlayerHealth playerHealthComponent;
+    public float damageToPlayer = 25f;
+
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
 
+        playerHealthComponent = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
 
     }
 
@@ -37,5 +41,13 @@ public class Enemy : MonoBehaviour
     void moveCharacter(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * speed * Time.fixedDeltaTime));
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playerHealthComponent.health -= damageToPlayer;
+        }
     }
 }

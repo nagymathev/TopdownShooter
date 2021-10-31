@@ -10,6 +10,7 @@ public class RandomEnemySpawner : MonoBehaviour
     public float timeBetweenEnemy = 5f;
     private float countDown;
     public float maxSpawnRate = 0.5f;
+    public float spawnRateIncrement = 0.1f;
 
 
     // Start is called before the first frame update
@@ -29,10 +30,10 @@ public class RandomEnemySpawner : MonoBehaviour
             int randSpawnPoint = Random.Range(0, spawnPoints.Length);
 
             Instantiate(enemyPrefabs[0], spawnPoints[randSpawnPoint].position, transform.rotation);
-            timeBetweenEnemy -= 0.5f;
-            if (timeBetweenEnemy <= 0.5)
+            timeBetweenEnemy -= spawnRateIncrement;
+            if (timeBetweenEnemy <= maxSpawnRate)
             {
-                timeBetweenEnemy = 0.5f;
+                timeBetweenEnemy = maxSpawnRate;
             }
 
             countDown = timeBetweenEnemy;
