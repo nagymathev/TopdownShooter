@@ -74,6 +74,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 60
   powerUp: 0
+  prefabOnSpawn: {fileID: 4180484257108976777, guid: 956e3dcb16471144abbe65d18cc3c97c, type: 3}
+  prefabOnPickup: {fileID: 4180484257108976777, guid: 74d8ee6e6d53c7444bd1cbd48a8aceec, type: 3}
   weaponDef:
     name: AR
     bulletPrefab: {fileID: 1918098929719188104, guid: 658db8156a13fea448f260cbe8396b36, type: 3}

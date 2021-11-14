@@ -7,7 +7,11 @@ public class PowerUp : MonoBehaviour
 
     public float lifeTime = 60f;
     public Type powerUp;
-    public Shooting.WeaponDef weaponDef;
+
+	public GameObject prefabOnSpawn;
+	public GameObject prefabOnPickup;
+
+	public Shooting.WeaponDef weaponDef;
 
     public enum Type 
     { 
@@ -21,11 +25,12 @@ public class PowerUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+		if (prefabOnSpawn)
+			Instantiate(prefabOnSpawn, transform.position, transform.rotation);
+	}
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
     {
 
 
@@ -42,9 +47,13 @@ public class PowerUp : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         print("PowerUp");
+
         if (collision.gameObject.tag == "Player") 
         {
-            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+			if (prefabOnPickup)
+				Instantiate(prefabOnPickup, transform.position, transform.rotation);
+
+			PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             Shooting shootingScript = collision.gameObject.GetComponent<Shooting>();
 
             switch (powerUp) 

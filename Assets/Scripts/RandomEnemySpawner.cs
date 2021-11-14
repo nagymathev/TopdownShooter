@@ -31,7 +31,9 @@ public class RandomEnemySpawner : MonoBehaviour
 	};
 
 	public List<Wave> waves;
-	public int currentWave;
+	public int currentWave = 0;
+	public int currentLoop = 0;
+
 	public float currentWaveTime;
 
 
@@ -46,7 +48,7 @@ public class RandomEnemySpawner : MonoBehaviour
 		currentWaveTime = 0;
 		if (waveText)
 		{
-			waveText.text = string.Format("Wave {0}", currentWave + 1);
+			waveText.text = string.Format("Wave {0}", currentWave + 1 + currentLoop * waves.Count);
 		}
 		//ToDo: UI/audio feedback and warning (reward) :)
 	}
@@ -69,6 +71,7 @@ public class RandomEnemySpawner : MonoBehaviour
 				_wave.timeAfter *= 0.75f;
 			}
 			currentWave = 0;
+			currentLoop++;
 			return;
 		}
 
