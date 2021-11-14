@@ -7,6 +7,7 @@ public class PowerUp : MonoBehaviour
 
     public float lifeTime = 60f;
     public Type powerUp;
+    public Shooting.WeaponDef weaponDef;
 
     public enum Type 
     { 
@@ -44,6 +45,7 @@ public class PowerUp : MonoBehaviour
         if (collision.gameObject.tag == "Player") 
         {
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            Shooting shootingScript = collision.gameObject.GetComponent<Shooting>();
 
             switch (powerUp) 
             {
@@ -53,6 +55,10 @@ public class PowerUp : MonoBehaviour
 
                 case Type.healthRegen:
                     playerHealth.HealthRegen(80f, 10f);
+                    break;
+
+                case Type.weaponSwitch:
+                    shootingScript.SetWeapon(weaponDef);
                     break;
 
                 default:

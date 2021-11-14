@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 8116104558504747477}
   defaultWeapon:
+    name: DefaultPistol
     bulletPrefab: {fileID: 1918098929719188104, guid: 658db8156a13fea448f260cbe8396b36, type: 3}
     muzzleFlashPrefab: {fileID: 0}
     reloadPrefab: {fileID: 4180484257108976777, guid: 326de45d369916c42a25a1b17fbb3ac7, type: 3}
@@ -181,6 +182,7 @@ MonoBehaviour:
     magSize: 7
     numMagazines: -1
   currentWeapon:
+    name: 
     bulletPrefab: {fileID: 0}
     muzzleFlashPrefab: {fileID: 0}
     reloadPrefab: {fileID: 0}
@@ -195,7 +197,6 @@ MonoBehaviour:
   repeatTimer: 0
   reloadTimer: 0
   numBullets: 10
-  numMagazines: -1
 --- !u!58 &8116104558199523591
 CircleCollider2D:
   m_ObjectHideFlags: 0

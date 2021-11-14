@@ -11,10 +11,11 @@ public class PowerUpSpawner : MonoBehaviour
     public GameObject[] powerUps;
 
     public float countDown;
+    public float maxCountDown;
     // Start is called before the first frame update
     void Start()
     {
-        
+        countDown = maxCountDown;
     }
 
     // Update is called once per frame
@@ -39,7 +40,7 @@ public class PowerUpSpawner : MonoBehaviour
             //}
 
             //countDown = timeBetweenEnemy;
-            countDown = 10;
+            countDown = maxCountDown;
         }
         else
         {

@@ -12,6 +12,8 @@ public class Shooting : MonoBehaviour
 	[System.Serializable]
 	public struct WeaponDef
 	{
+        public string name;
+
 		public GameObject bulletPrefab;
 		public GameObject muzzleFlashPrefab;
 		public GameObject reloadPrefab;
@@ -48,7 +50,7 @@ public class Shooting : MonoBehaviour
 
 	//public int magSize = 7;
 	public int numBullets = 10;
-	public int numMagazines = -1;
+	//public int numMagazines = -1;
 
 	private void Start()
 	{
@@ -56,7 +58,8 @@ public class Shooting : MonoBehaviour
 	}
 
 	public void SetWeapon(WeaponDef def)
-	{
+    {
+
 		currentWeapon = def;
 		numBullets = currentWeapon.magSize;
 	}
@@ -97,16 +100,16 @@ public class Shooting : MonoBehaviour
 
 		if (numBullets == 0)
 		{//empty
-			if (numMagazines > 0)
+			if (currentWeapon.numMagazines > 0)
 			{//start reload
-				numMagazines--;
+                currentWeapon.numMagazines--;
 				numBullets = currentWeapon.magSize;
 				reloadTimer = currentWeapon.reloadTime;
 				if (currentWeapon.reloadPrefab)
 					Instantiate(currentWeapon.reloadPrefab, firePoint.position, firePoint.rotation);
 				return;
 			} else
-			if (numMagazines < 0)
+			if (currentWeapon.numMagazines < 0)
 			{//infinite mags (default pistol)
 				reloadTimer = currentWeapon.reloadTime;
 				numBullets = currentWeapon.magSize;
