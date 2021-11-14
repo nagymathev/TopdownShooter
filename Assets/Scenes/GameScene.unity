@@ -1935,7 +1935,7 @@ MonoBehaviour:
   - {fileID: 8316201619906010803, guid: 6e5584556cccdcc49ae8dda94491f969, type: 3}
   timeBetweenEnemy: 5
   maxSpawnRate: 0.5
-  spawnRateIncrement: 0.1
+  spawnRateIncrement: 0.5
 --- !u!4 &1399337017
 Transform:
   m_ObjectHideFlags: 0
