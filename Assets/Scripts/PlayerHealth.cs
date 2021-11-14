@@ -41,4 +41,23 @@ public class PlayerHealth : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
+
+
+
+    //powerUp Healing
+    public void Heal(float healAmount)
+    {
+        health += healAmount;
+    }
+
+    public IEnumerator HealthRegen(float maxHealing, float healAmount)
+    {
+        for (float i = 0; i < maxHealing; i += healAmount)
+        {
+
+
+            health += healAmount;
+            yield return new WaitForSeconds(1);
+        }
+    }
 }
