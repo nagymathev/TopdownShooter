@@ -13,16 +13,22 @@ public class Bullet : MonoBehaviour
     {
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 0.5f);
+
         Destroy(gameObject);
 
-        Health health = collision.gameObject.GetComponent<Health>();
 
-        if (health == null)
+		//Debug.Log(collision.otherCollider.gameObject);
+		Health health = collision.otherCollider.gameObject.GetComponent<Health>();
+
+		if (health == null)
         {
             return;
         }
 
-        health.health -= damage;
+		//Debug.Log(health);
+
+        //health.health -= damage;
+		health.Hurt(damage);
     }
 
 }

@@ -2113,7 +2113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f6725a1f67dcd4cb028845e4df8d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveText: {fileID: 1454503845}
   spawnPoints:
   - {fileID: 1212661405}
   - {fileID: 1217715718}
@@ -2127,93 +2126,7 @@ MonoBehaviour:
   - {fileID: 8316201619906010803, guid: 6e5584556cccdcc49ae8dda94491f969, type: 3}
   timeBetweenEnemy: 5
   maxSpawnRate: 0.5
-  spawnRateIncrement: 0.5
-  waves:
-  - timeBefore: 3
-    timeSpawning: 1
-    timeAfter: 3
-    enemiesPerSecond: 1
-    waitForAllDead: 1
-    spawnPoints:
-    - {fileID: 1212661405}
-    - {fileID: 1217715718}
-    - {fileID: 1575321305}
-    - {fileID: 163205073}
-    - {fileID: 1145091887}
-    - {fileID: 224247414}
-    - {fileID: 816307290}
-    - {fileID: 1035850149}
-    enemyPrefabs:
-    - {fileID: 8316201619906010803, guid: cf6cecd5b8f20174eb43702cfea92f43, type: 3}
-  - timeBefore: 3
-    timeSpawning: 3
-    timeAfter: 3
-    enemiesPerSecond: 1
-    waitForAllDead: 1
-    spawnPoints:
-    - {fileID: 1212661405}
-    - {fileID: 1217715718}
-    - {fileID: 1575321305}
-    - {fileID: 163205073}
-    - {fileID: 1145091887}
-    - {fileID: 224247414}
-    - {fileID: 816307290}
-    - {fileID: 1035850149}
-    enemyPrefabs:
-    - {fileID: 8316201619906010803, guid: cf6cecd5b8f20174eb43702cfea92f43, type: 3}
-    - {fileID: 8316201619906010803, guid: 8b52b9e3b68d7fa43a437a04d51b0a3e, type: 3}
-  - timeBefore: 3
-    timeSpawning: 1
-    timeAfter: 3
-    enemiesPerSecond: 5
-    waitForAllDead: 1
-    spawnPoints:
-    - {fileID: 1212661405}
-    - {fileID: 1217715718}
-    - {fileID: 1575321305}
-    - {fileID: 163205073}
-    - {fileID: 1145091887}
-    - {fileID: 224247414}
-    - {fileID: 816307290}
-    - {fileID: 1035850149}
-    enemyPrefabs:
-    - {fileID: 8316201619906010803, guid: 8b52b9e3b68d7fa43a437a04d51b0a3e, type: 3}
-  - timeBefore: 3
-    timeSpawning: 1
-    timeAfter: 3
-    enemiesPerSecond: 1
-    waitForAllDead: 1
-    spawnPoints:
-    - {fileID: 1212661405}
-    - {fileID: 1217715718}
-    - {fileID: 1575321305}
-    - {fileID: 163205073}
-    - {fileID: 1145091887}
-    - {fileID: 224247414}
-    - {fileID: 816307290}
-    - {fileID: 1035850149}
-    enemyPrefabs:
-    - {fileID: 8316201619906010803, guid: 3d54f6a68870f2847874513688e23e2a, type: 3}
-  - timeBefore: 3
-    timeSpawning: 5
-    timeAfter: 3
-    enemiesPerSecond: 2
-    waitForAllDead: 1
-    spawnPoints:
-    - {fileID: 1212661405}
-    - {fileID: 1217715718}
-    - {fileID: 1575321305}
-    - {fileID: 163205073}
-    - {fileID: 1145091887}
-    - {fileID: 224247414}
-    - {fileID: 816307290}
-    - {fileID: 1035850149}
-    enemyPrefabs:
-    - {fileID: 8316201619906010803, guid: cf6cecd5b8f20174eb43702cfea92f43, type: 3}
-    - {fileID: 8316201619906010803, guid: 8b52b9e3b68d7fa43a437a04d51b0a3e, type: 3}
-    - {fileID: 8316201619906010803, guid: 3d54f6a68870f2847874513688e23e2a, type: 3}
-  currentWave: 0
-  currentWaveTime: 0
+  spawnRateIncrement: 0.1
 --- !u!4 &1399337017
 Transform:
   m_ObjectHideFlags: 0

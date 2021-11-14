@@ -9,22 +9,39 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 movement;
 
-    PlayerHealth playerHealthComponent;
+    
     public float damageToPlayer = 25f;
+	public float damageRepeatTime = 1.0f;
+	public float damageTimer = 0;
+
+	public bool playerInReach = false;
+	PlayerHealth playerHealthComponent;
 
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-
-        playerHealthComponent = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+		if (!target) return;
+
+		if (playerInReach && playerHealthComponent)
+		{
+			if (damageRepeatTime > 0)
+			{
+				damageRepeatTime -= Time.deltaTime;
+			} else
+			{
+				playerHealthComponent.Hurt(damageToPlayer);// .health -= damageToPlayer;
+				damageTimer = damageRepeatTime;
+			}
+		}
+
         Vector3 direction = target.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
@@ -47,7 +64,18 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerHealthComponent.health -= damageToPlayer;
-        }
-    }
+			playerInReach = true;
+			//playerHealthComponent.health -= damageToPlayer;
+			playerHealthComponent = collision.gameObject.GetComponent<PlayerHealth>();
+		}
+	}
+
+	private void OnCollisionExit2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "Player")
+		{
+			playerInReach = false;
+			playerHealthComponent = null;
+		}
+	}
 }
