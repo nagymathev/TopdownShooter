@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1332342653}
   - component: {fileID: -1083188599862926305}
   m_Layer: 0
-  m_Name: PowerUp
+  m_Name: PowerUp1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 60
-  powerUp: 2
+  powerUp: 1
   weaponDef:
     name: AR
     bulletPrefab: {fileID: 1918098929719188104, guid: 658db8156a13fea448f260cbe8396b36, type: 3}

@@ -11,14 +11,20 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+		GameObject other = collision.gameObject;
+		Debug.Log(other.name, other);
+		//ignore collision with other bullets (shotgun ones spawn at the same point)
+		if (other.GetComponent<Bullet>())
+		{
+			return;
+		}
+
+		GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 0.5f);
 
         Destroy(gameObject);
 
-
-		//Debug.Log(collision.otherCollider.gameObject);
-		Health health = collision.otherCollider.gameObject.GetComponent<Health>();
+		Health health = other.GetComponent<Health>();
 
 		if (health == null)
         {

@@ -108,10 +108,10 @@ public class RandomEnemySpawner : MonoBehaviour
 			//GameObject target = GameObject.FindGameObjectWithTag("Player");
 			//if (!target) return;
 
-			int randEnemy = Random.Range(0, wave.enemyPrefabs.Length);
-            int randSpawnPoint = Random.Range(0, wave.spawnPoints.Length);
+			int randEnemy = Random.Range(0, 1000) % wave.enemyPrefabs.Length;
+            int randSpawnPoint = Random.Range(0, 1000) % wave.spawnPoints.Length;
 
-            Instantiate(wave.enemyPrefabs[0], wave.spawnPoints[randSpawnPoint].position, transform.rotation);
+            Instantiate(wave.enemyPrefabs[randEnemy], wave.spawnPoints[randSpawnPoint].position, transform.rotation);
 			//timeBetweenEnemy -= spawnRateIncrement;
 			//if (timeBetweenEnemy <= maxSpawnRate)
 			//{
