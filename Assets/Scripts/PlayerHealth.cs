@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
 			//ok still alive
 			if (prefabOnHurt)
 				Instantiate(prefabOnHurt, transform.position, transform.rotation);
+			return;
 		}
 
 		//died

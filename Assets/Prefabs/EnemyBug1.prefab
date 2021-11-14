@@ -166,9 +166,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edac62aa211a2b9409bb9afb433d722d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1.5
   rb: {fileID: 8316201619906010796}
+  movement: {x: 0, y: 0}
   damageToPlayer: 10
+  damageRepeatTime: 1
+  damageTimer: 0
+  playerInReach: 0
 --- !u!114 &-1828297019567676972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,3 +187,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   scoreReward: 100
+  prefabOnHurt: {fileID: 1040603365283489215, guid: dd62568a0ee4b0945a55e9784d260448, type: 3}
+  prefabOnDeath: {fileID: 1040603365283489215, guid: dac263dda82be5f42a9fcdad92b63e8d, type: 3}

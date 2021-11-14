@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private Transform target;
+    private GameObject target;
     public float speed = 5f;
     public Rigidbody2D rb;
-    private Vector2 movement;
+    public Vector2 movement;
 
     
     public float damageToPlayer = 25f;
@@ -21,20 +21,24 @@ public class Enemy : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-
+        target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-		if (!target) return;
+		if (!target)
+		{
+			if (Random.value < 0.01f)
+				movement = Random.insideUnitCircle;
+			return;
+		}
 
 		if (playerInReach && playerHealthComponent)
 		{
-			if (damageRepeatTime > 0)
+			if (damageTimer > 0)
 			{
-				damageRepeatTime -= Time.deltaTime;
+				damageTimer -= Time.deltaTime;
 			} else
 			{
 				playerHealthComponent.Hurt(damageToPlayer);// .health -= damageToPlayer;
@@ -42,12 +46,12 @@ public class Enemy : MonoBehaviour
 			}
 		}
 
-        Vector3 direction = target.position - transform.position;
+        Vector3 direction = target.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
-        direction.Normalize();
+        //direction.Normalize();
         movement = direction;
-
+		movement.Normalize();
     }
 
     private void FixedUpdate()

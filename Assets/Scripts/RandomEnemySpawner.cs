@@ -105,7 +105,10 @@ public class RandomEnemySpawner : MonoBehaviour
 		//spawning time! :)
 		if (countDown <= 0)
         {
-            int randEnemy = Random.Range(0, wave.enemyPrefabs.Length);
+			//GameObject target = GameObject.FindGameObjectWithTag("Player");
+			//if (!target) return;
+
+			int randEnemy = Random.Range(0, wave.enemyPrefabs.Length);
             int randSpawnPoint = Random.Range(0, wave.spawnPoints.Length);
 
             Instantiate(wave.enemyPrefabs[0], wave.spawnPoints[randSpawnPoint].position, transform.rotation);
