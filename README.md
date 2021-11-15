@@ -35,5 +35,6 @@
 - more enemy types? (flying ones that can overpass crawling ones; jumping ones; ...?)
 - enemies to wait a bit before attacking when they touch the player? (allows melee/kick without getting hurt!)
 - enemies to stop moving for a bit before/after attacking?
+- visual polish? (e.g. lighting)
 
 ## Bugs?
