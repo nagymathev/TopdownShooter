@@ -7,6 +7,7 @@
 - High score list :) (also needs name entry)
   -   ...online?
 - Main menu, Intro* or something to let the player know at least the basics: goal, controls, "backstory" :)
+- NAME for the game :)
 - Game balancing, difficulty tweaking (waves timing and difficulty progression, weapons, health, powerups, enemies' speed, health, etc)
 - Make the wave "wait for empty" option work
 - Graphics for various things:
