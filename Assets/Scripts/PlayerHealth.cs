@@ -50,7 +50,12 @@ public class PlayerHealth : MonoBehaviour
         health += healAmount;
     }
 
-    public IEnumerator HealthRegen(float maxHealing, float healAmount)
+	public void HealthRegen(float maxHealing, float healAmount)
+	{
+		StartCoroutine(DoHealthRegen(maxHealing, healAmount));
+	}
+
+	IEnumerator DoHealthRegen(float maxHealing, float healAmount)
     {
         print("PreHealthRegen");
         for (float i = 0; i < maxHealing; i += healAmount)

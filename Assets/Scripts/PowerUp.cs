@@ -63,8 +63,7 @@ public class PowerUp : MonoBehaviour
                     break;
 
                 case Type.healthRegen:
-                    StartCoroutine(playerHealth.HealthRegen(80f, 10f));
-                    //playerHealth.HealthRegen(80f, 10f);
+                    playerHealth.HealthRegen(80f, 10f);
                     break;
 
                 case Type.weaponSwitch:
