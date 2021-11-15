@@ -67,7 +67,7 @@ public class RandomEnemySpawner : MonoBehaviour
                 for (int i = 0; i < waves.Count; i++)
                 {
                     Wave _wave = waves[i];
-                    _wave.enemiesPerSecond *= 1.3f;
+                    _wave.enemiesPerSecond *= 1.2f;
                     _wave.timeSpawning *= 1f;
                     _wave.timeBefore *= 0.75f;
                     _wave.timeAfter *= 0.75f;
@@ -81,9 +81,9 @@ public class RandomEnemySpawner : MonoBehaviour
                 {
                     Wave _wave = waves[i];
                     _wave.enemiesPerSecond *= 1f;
-                    _wave.timeSpawning *= 1.3f;
+                    _wave.timeSpawning *= 1.2f;
                     _wave.timeBefore *= 0.75f;
-                    _wave.timeAfter *= 1f;
+                    _wave.timeAfter *= 1.2f;
                     waves[i] = _wave;
                 }
             }
