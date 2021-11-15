@@ -52,12 +52,14 @@ public class PlayerHealth : MonoBehaviour
 
     public IEnumerator HealthRegen(float maxHealing, float healAmount)
     {
+        print("PreHealthRegen");
         for (float i = 0; i < maxHealing; i += healAmount)
         {
-
+            print("healthRegen");
 
             health += healAmount;
             yield return new WaitForSeconds(1);
+            print("AfterRegen");
         }
     }
 }

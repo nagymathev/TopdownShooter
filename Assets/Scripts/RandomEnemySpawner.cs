@@ -58,20 +58,37 @@ public class RandomEnemySpawner : MonoBehaviour
     {
 		if (currentWave >= waves.Count)
 		{
-			//end of waves! well, survived everything :)
-			//ToDo: notify UI to show victory screen
-			
-			//temp.: restart but harder
-			for(int i=0; i<waves.Count; i++)
-			{
-				Wave _wave = waves[i];
-				_wave.enemiesPerSecond *= 1.5f;
-				_wave.timeSpawning *= 1.5f;
-				_wave.timeBefore *= 0.75f;
-				_wave.timeAfter *= 0.75f;
-                waves[i] = _wave;
-			}
-			currentWave = 0;
+            //end of waves! well, survived everything :)
+            //ToDo: notify UI to show victory screen
+
+            //temp.: restart but harder
+            if (currentLoop % 2 == 1) 
+            {
+                for (int i = 0; i < waves.Count; i++)
+                {
+                    Wave _wave = waves[i];
+                    _wave.enemiesPerSecond *= 1.5f;
+                    _wave.timeSpawning *= 1f;
+                    _wave.timeBefore *= 0.75f;
+                    _wave.timeAfter *= 0.75f;
+                    waves[i] = _wave;
+                }
+            }
+
+            if (currentLoop % 2 == 0) 
+            {
+                for (int i = 0; i < waves.Count; i++)
+                {
+                    Wave _wave = waves[i];
+                    _wave.enemiesPerSecond *= 1f;
+                    _wave.timeSpawning *= 1.5f;
+                    _wave.timeBefore *= 0.75f;
+                    _wave.timeAfter *= 1f;
+                    waves[i] = _wave;
+                }
+            }
+
+            currentWave = 0;
 			currentLoop++;
 			return;
 		}
