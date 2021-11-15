@@ -10,11 +10,11 @@
 - Make the wave "wait for empty" option work
 - Graphics for various things:
 -  powerups,
--  weapons,
+-  weapons (in hand, different bullets for different weapons, muzzle flash)
+-  damage, kills (e.g. bug blood that stays on the ground instead of explosion) 
+-  enemies to SHOW when they attack ("animation"; they have an internal counter!)
 -  enemies,
 -  character,
--  damage, kills (e.g. bug blood that stays on the ground instead of explosion) 
--  enemies to SHOW when they attack ("animation"; they )
 - Audio for various things:
 -  footsteps
 -  damage, kills (e.g. bug squeak)
@@ -33,5 +33,7 @@
 - placeable mine? (same but without moving, and activates on touch instead)
 - bullet lifetime? (distance)
 - more enemy types? (flying ones that can overpass crawling ones; jumping ones; ...?)
+- enemies to wait a bit before attacking when they touch the player? (allows melee/kick without getting hurt!)
+- enemies to stop moving for a bit before/after attacking?
 
 ## Bugs?
