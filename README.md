@@ -5,6 +5,7 @@
 # ToDo list: (in roughly priority order)
 - Actual game over screen (display score, restart)
 - High score list :) (also needs name entry)
+-   ...online?
 - Game balancing, difficulty tweaking (waves timing and difficulty progression, weapons, health, powerups, enemies' speed, health, etc)
 - Make the wave "wait for empty" option work
 - Graphics for various things:
