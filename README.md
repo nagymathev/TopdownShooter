@@ -24,11 +24,13 @@
 # MAKE A BUILD!
 
 ## Potential extra ideas:
-- environment: potentially larger world, obstacles, etc
-- melee attack? (e.g. kick; sometimes i don't want to waste "good" ammo on just one enemy)
+- environment: potentially larger world with scrolling, obstacles, etc
+-   scrolling raises the issue of where to spawn stuff, so might be a can of worms!
+- melee attack? (e.g. kick; sometimes i don't want to waste "good" ammo on just one enemy, just want to push them away. could be simply an invisible* bullet :) )
 - dash?
+- throwing grenade? (simple a bullet that doesn't collide for a while (as it's flying) and then switches to a larger AOE hit)
+- placeable mine? (same but without moving, and activates on touch instead)
 - bullet lifetime? (distance)
-- grenade?
-- more enemy types?
+- more enemy types? (flying ones that can overpass crawling ones; jumping ones; ...?)
 
 ## Bugs?
