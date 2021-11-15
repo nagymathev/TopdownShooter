@@ -69,6 +69,7 @@ public class RandomEnemySpawner : MonoBehaviour
 				_wave.timeSpawning *= 1.5f;
 				_wave.timeBefore *= 0.75f;
 				_wave.timeAfter *= 0.75f;
+                waves[i] = _wave;
 			}
 			currentWave = 0;
 			currentLoop++;
