@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 				{
 					Time.timeScale = 0.5f;
 					root_GameOverScreen.SetActive(true);
-					root_InGameUI.SetActive(false);
+					//root_InGameUI.SetActive(false);
 
 					//ToDo: display score, ask for name, upload to leaderboard,
 					// refresh high scores and display list,

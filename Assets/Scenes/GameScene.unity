@@ -1112,7 +1112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683420703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36, y: 577, z: 0}
+  m_LocalPosition: {x: 25.2, y: 634.6, z: 0}
   m_LocalScale: {x: 190.09235, y: 190.09235, z: 190.09235}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3039,9 +3039,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -350, y: 229}
+  m_AnchoredPosition: {x: -561.9, y: 599.6}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.50000006, y: 0.49999997}
 --- !u!95 &1583388670
 Animator:
   serializedVersion: 3
@@ -6426,6 +6426,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3786435105391162184, guid: 146867872dc6a5c478af0dc8bba6b3e3, type: 3}
+      propertyPath: maxCountDown
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786435105391162184, guid: 146867872dc6a5c478af0dc8bba6b3e3, type: 3}
+      propertyPath: powerUps.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786435105391162184, guid: 146867872dc6a5c478af0dc8bba6b3e3, type: 3}
+      propertyPath: powerUps.Array.data[0]
+      value: 
+      objectReference: {fileID: 3120967773615753128, guid: 352aed8a05ecbdb428bdf9d0ec4a2e47, type: 3}
+    - target: {fileID: 3786435105391162184, guid: 146867872dc6a5c478af0dc8bba6b3e3, type: 3}
+      propertyPath: powerUps.Array.data[2]
+      value: 
+      objectReference: {fileID: 3120967773615753128, guid: c0c9d61199d83b943be14810b8e1bbe2, type: 3}
+    - target: {fileID: 3786435105391162184, guid: 146867872dc6a5c478af0dc8bba6b3e3, type: 3}
+      propertyPath: powerUps.Array.data[3]
+      value: 
+      objectReference: {fileID: 3120967773615753128, guid: f62d7ffcb04071d489966f2cbb3d0b61, type: 3}
     - target: {fileID: 3786435105391162185, guid: 146867872dc6a5c478af0dc8bba6b3e3, type: 3}
       propertyPath: m_Name
       value: PowerUp Spawner

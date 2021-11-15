@@ -31,7 +31,8 @@ public class PowerUpSpawner : MonoBehaviour
 
 			//powerUp spawn
 			int index = Random.Range(0, 1000) % powerUps.Length;
-			Instantiate(powerUps[index], new Vector3(Random.Range(bottomRight.transform.position.x, topLeft.transform.position.x),Random.Range(bottomRight.transform.position.y, topLeft.transform.position.y),0), Quaternion.identity);
+            SpawnPowerUp(new Vector3(Random.Range(bottomRight.transform.position.x, topLeft.transform.position.x), Random.Range(bottomRight.transform.position.y, topLeft.transform.position.y), 0), powerUps[index]);
+            //Instantiate(powerUps[index], new Vector3(Random.Range(bottomRight.transform.position.x, topLeft.transform.position.x),Random.Range(bottomRight.transform.position.y, topLeft.transform.position.y),0), Quaternion.identity);
 
 
             //timeBetweenEnemy -= spawnRateIncrement;
@@ -47,5 +48,10 @@ public class PowerUpSpawner : MonoBehaviour
         {
             countDown -= Time.deltaTime;
         }
+    }
+
+    public void SpawnPowerUp(Vector3 position, GameObject powerUp)
+    {
+        Instantiate(powerUp, position, Quaternion.identity);
     }
 }
