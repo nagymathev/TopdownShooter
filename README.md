@@ -27,6 +27,7 @@
 ## Potential extra ideas:
 - environment: potentially larger world with scrolling, obstacles, etc
   -   scrolling raises the issue of where to spawn stuff, so might be a can of worms!
+  -   one option could be, to open a door to a next room for the player to progress to after surviving a set number of waves :) So we could have basically the same gameplay with no scrolling and set spawn points (easy) but have some larger progression and some variety in the environment. The rooms can get bigger and each set the camera height/size to control the visible area.
 - melee attack? (e.g. kick; sometimes i don't want to waste "good" ammo on just one enemy, just want to push them away. could be simply an invisible* bullet :) )
 - dash?
 - throwing grenade? (simple a bullet that doesn't collide for a while (as it's flying) and then switches to a larger AOE hit)
