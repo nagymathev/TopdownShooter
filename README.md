@@ -5,20 +5,20 @@
 # ToDo list: (in roughly priority order)
 - Actual game over screen (display score, restart)
 - High score list :) (also needs name entry)
- -   ...online?
+  -   ...online?
 - Main menu, Intro* or something to let the player know at least the basics: goal, controls, "backstory" :)
 - Game balancing, difficulty tweaking (waves timing and difficulty progression, weapons, health, powerups, enemies' speed, health, etc)
 - Make the wave "wait for empty" option work
 - Graphics for various things:
- -  powerups,
- -  weapons (in hand, different bullets for different weapons, muzzle flash)
- -  damage, kills (e.g. bug blood that stays on the ground instead of explosion) 
- -  enemies to SHOW when they attack ("animation"; they have an internal counter!)
- -  enemies,
- -  character,
+  -  powerups,
+  -  weapons (in hand, different bullets for different weapons, muzzle flash)
+  -  damage, kills (e.g. bug blood that stays on the ground instead of explosion) 
+  -  enemies to SHOW when they attack ("animation"; they have an internal counter!)
+  -  enemies,
+  -  character,
 - Audio for various things:
- -  footsteps
- -  damage, kills (e.g. bug squeak)
+  -  footsteps
+  -  damage, kills (e.g. bug squeak)
 - Camera (how should it scale? should we add scrolling? at the very least find a good enough size for fullscreen)
 
 # MAKE A BUILD!
