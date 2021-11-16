@@ -41,3 +41,5 @@
   - DESTRUCTABLE obstacles? =o) (shooting a hole on a wall can be good or bad for you ;)
 
 ## Bugs?
+- your points don't reset after you die and press enter to restart
+- HP and the wave counter doesn't change
