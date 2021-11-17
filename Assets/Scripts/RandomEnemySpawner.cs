@@ -27,7 +27,7 @@ public class RandomEnemySpawner : MonoBehaviour
 		public float timeAfter;
 		//public float timeBetweenEnemy;
 		public float enemiesPerSecond;
-		public bool waitForAllDead;
+		public int doNotStartUntilFewerThan;
 
 		public Transform[] spawnPoints;
 		public GameObject[] enemyPrefabs;
@@ -38,6 +38,8 @@ public class RandomEnemySpawner : MonoBehaviour
 	public int currentLoop = 0;
 
 	public float currentWaveTime;
+
+	public List<GameObject> currentEnemies = new List<GameObject>();
 
 
 	// Start is called before the first frame update
@@ -69,6 +71,10 @@ public class RandomEnemySpawner : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
+		//garbage collection
+		currentEnemies.RemoveAll(a => a == null);
+
+
 		if (currentWave >= waves.Count)
 		{
             //end of waves! well, survived everything :)
@@ -110,19 +116,25 @@ public class RandomEnemySpawner : MonoBehaviour
 
 		if (currentWaveTime >= wave.timeBefore + wave.timeSpawning + wave.timeAfter)
 		{
-			if(wave.waitForAllDead)
+			bool okToStart = true;
+			if(wave.doNotStartUntilFewerThan >= 0)
 			{
 				//check if the number of existing enemies are zero and return if it isn't
+				if (!(currentEnemies.Count < wave.doNotStartUntilFewerThan))
+					okToStart = false;
 			}
 
-			//initialise next wave!
-			currentWave++;
+			if (okToStart)
+			{
+				//initialise next wave!
+				currentWave++;
 
-			if (prefab_nextWave)
-				Instantiate(prefab_nextWave);
+				if (prefab_nextWave)
+					Instantiate(prefab_nextWave);
 
-			StartWave();
-			return;
+				StartWave();
+				return;
+			}
 		}
 
 		currentWaveTime += Time.deltaTime;
@@ -148,7 +160,8 @@ public class RandomEnemySpawner : MonoBehaviour
 			int randEnemy = Random.Range(0, 1000) % wave.enemyPrefabs.Length;
             int randSpawnPoint = Random.Range(0, 1000) % wave.spawnPoints.Length;
 
-            Instantiate(wave.enemyPrefabs[randEnemy], wave.spawnPoints[randSpawnPoint].position, transform.rotation);
+            GameObject enemy = Instantiate(wave.enemyPrefabs[randEnemy], wave.spawnPoints[randSpawnPoint].position, transform.rotation);
+			currentEnemies.Add(enemy);
 			//timeBetweenEnemy -= spawnRateIncrement;
 			//if (timeBetweenEnemy <= maxSpawnRate)
 			//{

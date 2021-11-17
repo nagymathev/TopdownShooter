@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1332342653}
   - component: {fileID: -1083188599862926305}
   m_Layer: 0
-  m_Name: PowerUp1
+  m_Name: PowerUp1_instaHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

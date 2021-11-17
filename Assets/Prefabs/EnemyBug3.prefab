@@ -289,6 +289,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 150
-  scoreReward: 100
+  scoreReward: 300
   prefabOnHurt: {fileID: 1040603365283489215, guid: dd62568a0ee4b0945a55e9784d260448, type: 3}
   prefabOnDeath: {fileID: 1040603365283489215, guid: dac263dda82be5f42a9fcdad92b63e8d, type: 3}

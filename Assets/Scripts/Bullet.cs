@@ -25,19 +25,28 @@ public class Bullet : MonoBehaviour
 			//Destroy(effect, 0.5f);
 		}
 
-        Destroy(gameObject);
-
 		Health health = other.GetComponent<Health>();
 
 		if (health == null)
         {
-            return;
+			//self-destruct
+			Destroy(gameObject);
+			return;
         }
+
+		if (health.health <= 0)
+		{
+			//if it's already dead, bounce
+			return;
+		}
 
 		//Debug.Log(health);
 
         //health.health -= damage;
 		health.Hurt(damage);
-    }
+
+		//self-destruct
+		Destroy(gameObject);
+	}
 
 }
