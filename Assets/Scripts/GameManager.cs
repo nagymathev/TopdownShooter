@@ -184,23 +184,45 @@ public class GameManager : MonoBehaviour
 	{
 		if (stateTime < 1.0f) return;
 
+		StartCoroutine(DoSubmitScore());
+	}
+
+	bool submittingScore = false;
+	IEnumerator DoSubmitScore()
+	{
+		if (submittingScore) yield return null;
+		submittingScore = true;
+
+		root_NameEntry.SetActive(false);
+
 		if (your_name && !string.IsNullOrEmpty(your_name.text))
 		if (leaderboard && score)
 		{
 			leaderboard.PostScore(your_name.text, score.score);
+
+			// wait for the posting to finish before retrieving so we get the new one included
+			yield return new WaitForSecondsRealtime(1.0f);
 			
-			//ToDo: wait for the posting to finish before retrieving so we get the new one included
 			scores = leaderboard.RetrieveScores();
 			StartCoroutine(WaitForScoreDisplay());
 		}
 
 		SetState(State.GameOver);
+		submittingScore = false;
 	}
 
 
+	bool reloading = false;
 	private IEnumerator Reload()
 	{
+		if (reloading) yield return null;
+		reloading = true;
+
 		Debug.Log("Reloading...");
+		root_GameOverScreen.SetActive(false);
+		root_InGameUI.SetActive(true);
+		root_NameEntry.SetActive(false);
+
 		yield return new WaitForSeconds(0.5f);
 		SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
 		Resources.UnloadUnusedAssets();
@@ -209,6 +231,8 @@ public class GameManager : MonoBehaviour
 		yield return new WaitForSeconds(0.1f);
 		Time.timeScale = 1.0f;
 		Start();
+
+		reloading = false;
 	}
 
 }
