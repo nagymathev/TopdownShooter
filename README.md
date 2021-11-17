@@ -23,7 +23,7 @@
   -  [x] damage, kills (e.g. bug squeak)
 - [ ] Camera (how should it scale? should we add scrolling? at the very least find a good enough size for fullscreen)
 
-# MAKE A BUILD!
+# [x] MAKE A BUILD!
 
 ## Potential extra ideas:
 - environment: potentially larger world with scrolling, obstacles, etc
