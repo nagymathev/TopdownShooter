@@ -1,6 +1,7 @@
 # TopdownShooter
  topdown shooter game with score and increasing difficulty
-
+ 
+![TopDownShooter](https://user-images.githubusercontent.com/55601645/142269876-4591f7ca-fd34-497f-9bab-d690c4cde3d9.png)
 
 # ToDo list: (in roughly priority order)
 - Actual game over screen (display score, restart)
