@@ -9,7 +9,7 @@ public class HealthScore : MonoBehaviour
     public Text healthText;
     public float healthScore;
 
-    PlayerHealth playerHealthComponent;
+    public PlayerHealth playerHealthComponent;
 
     // Start is called before the first frame update
     void Start()

@@ -21,7 +21,8 @@ public class Leaderboard: MonoBehaviour
 
 	public List<Score> RetrieveScores()
     {
-        scores = new List<Score>();
+		Debug.Log("Retrieve");
+		scores = new List<Score>();
         StartCoroutine(DoRetrieveScores());
 		//returns it by reference; it will be filled out in the background!
         return scores;
@@ -29,7 +30,8 @@ public class Leaderboard: MonoBehaviour
 
     public void PostScore(string name, int score)
     {
-        StartCoroutine(DoPostScore(name, score));
+		Debug.Log("Post");
+		StartCoroutine(DoPostScore(name, score));
     }
 
     public IEnumerator DoRetrieveScores()

@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
 	public Score score;
 	public Leaderboard leaderboard;
 	public UIScript uiScript;
+	public HealthScore uiHealth;
+	public RandomEnemySpawner spawner;
 
-	public GameObject root_persistence;
+	//public GameObject root_persistence;
 
 	public GameObject root_InGameUI;
 	public GameObject root_GameOverScreen;
@@ -23,6 +25,8 @@ public class GameManager : MonoBehaviour
 
 	public Text scores_names;
 	public Text scores_scores;
+
+	public Text ui_wave_text;
 
 	public List<Leaderboard.Score> scores;
 
@@ -65,7 +69,13 @@ public class GameManager : MonoBehaviour
 		score = FindObjectOfType<Score>();
 		leaderboard = FindObjectOfType<Leaderboard>();
 		uiScript = FindObjectOfType<UIScript>();
+		uiHealth = FindObjectOfType<HealthScore>();
+		spawner = FindObjectOfType<RandomEnemySpawner>();
+
+		score.score = 0;
+		uiHealth.playerHealthComponent = player ? player.GetComponent<PlayerHealth>() : null;
 		uiScript.shootingScript = player ? player.GetComponent<Shooting>() : null;
+		spawner.SetWaveText(ui_wave_text);
 
 		if (leaderboard)
 		{
@@ -73,8 +83,8 @@ public class GameManager : MonoBehaviour
 			StartCoroutine(WaitForScoreDisplay());
 		}
 
-		if (your_name)
-			your_name.onEndEdit.AddListener(delegate { NameEntered(); });
+		//if (your_name)
+		//	your_name.onEndEdit.AddListener(delegate { NameEntered(); });
 	}
 
 	IEnumerator WaitForScoreDisplay()
@@ -123,7 +133,8 @@ public class GameManager : MonoBehaviour
 					} else
 					{
 						root_PressStart.SetActive((stateTime % 1.0f) <= 0.6f);
-						if (Input.GetKeyDown(KeyCode.Return))   //TEMP
+						if (Input.GetKeyDown(KeyCode.Return)
+							|| Input.GetMouseButtonDown(0))
 						{
 							StartCoroutine(Reload());
 						}
@@ -150,6 +161,8 @@ public class GameManager : MonoBehaviour
 				your_score.text = score.score.ToString();
 				if (!your_name.isFocused)
 					your_name.Select();
+				if (Input.GetKeyDown(KeyCode.Return))
+					NameEntered();
 				break;
 
 			default:
@@ -175,7 +188,8 @@ public class GameManager : MonoBehaviour
 		if (leaderboard && score)
 		{
 			leaderboard.PostScore(your_name.text, score.score);
-
+			
+			//ToDo: wait for the posting to finish before retrieving so we get the new one included
 			scores = leaderboard.RetrieveScores();
 			StartCoroutine(WaitForScoreDisplay());
 		}

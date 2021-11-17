@@ -46,6 +46,12 @@ public class RandomEnemySpawner : MonoBehaviour
 	void StartWave()
 	{
 		currentWaveTime = 0;
+		SetWaveText(waveText);
+	}
+
+	public void SetWaveText(Text text)
+	{
+		waveText = text;
 		if (waveText)
 		{
 			waveText.text = string.Format("Wave {0}", currentWave + 1 + currentLoop * waves.Count);
