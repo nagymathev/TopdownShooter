@@ -10,6 +10,9 @@ public class RandomEnemySpawner : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject[] enemyPrefabs;
 
+	public GameObject prefab_startGame;
+	public GameObject prefab_nextWave;
+
 	//public float timeBetweenEnemy = 5f;
 	//public float maxSpawnRate = 0.5f;
 	//public float spawnRateIncrement = 0.1f;
@@ -41,6 +44,10 @@ public class RandomEnemySpawner : MonoBehaviour
 	void Start()
     {
 		StartWave();
+
+		if (prefab_startGame)
+			Instantiate(prefab_startGame);
+
 	}
 
 	void StartWave()
@@ -110,6 +117,9 @@ public class RandomEnemySpawner : MonoBehaviour
 
 			//initialise next wave!
 			currentWave++;
+
+			if (prefab_nextWave)
+				Instantiate(prefab_nextWave);
 
 			StartWave();
 			return;

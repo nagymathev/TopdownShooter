@@ -2629,6 +2629,8 @@ MonoBehaviour:
   - {fileID: 1035850149}
   enemyPrefabs:
   - {fileID: 8316201619906010803, guid: 6e5584556cccdcc49ae8dda94491f969, type: 3}
+  prefab_startGame: {fileID: 4180484257108976777, guid: a3a76757b0b339e4f98a7fbcdf193abd, type: 3}
+  prefab_nextWave: {fileID: 4180484257108976777, guid: a3f9397980b598e4e82a1d6e69e69209, type: 3}
   waves:
   - timeBefore: 3
     timeSpawning: 1
@@ -3231,6 +3233,7 @@ MonoBehaviour:
   root_GameOverScreen: {fileID: 1656811350}
   root_NameEntry: {fileID: 1840333718}
   root_PressStart: {fileID: 1078186686}
+  prefab_gameOver: {fileID: 4180484257108976777, guid: f00fe070c16831e4c9d5fd8f71bb8564, type: 3}
   your_score: {fileID: 17903817}
   your_name: {fileID: 1927472479}
   scores_names: {fileID: 2002426447}

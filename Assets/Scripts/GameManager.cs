@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
 	public GameObject root_NameEntry;
 	public GameObject root_PressStart;
 
+	//public GameObject prefab_startGame;
+	public GameObject prefab_gameOver;
+
 	public Text your_score;
 	public InputField your_name;
 
@@ -149,6 +152,9 @@ public class GameManager : MonoBehaviour
 
 				if (player == null)
 				{//died
+					if (prefab_gameOver)
+						Instantiate(prefab_gameOver);
+
 					SetState(State.EnterName);
 				}
 				break;
@@ -194,6 +200,7 @@ public class GameManager : MonoBehaviour
 		submittingScore = true;
 
 		root_NameEntry.SetActive(false);
+		SetState(State.GameOver);
 
 		if (your_name && !string.IsNullOrEmpty(your_name.text))
 		if (leaderboard && score)
@@ -207,7 +214,6 @@ public class GameManager : MonoBehaviour
 			StartCoroutine(WaitForScoreDisplay());
 		}
 
-		SetState(State.GameOver);
 		submittingScore = false;
 	}
 
