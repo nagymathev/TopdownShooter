@@ -5,7 +5,7 @@
 https://itch.io/jam/game-off-2021
 
  
-![TopDownShooter](https://user-images.githubusercontent.com/55601645/142269876-4591f7ca-fd34-497f-9bab-d690c4cde3d9.png)
+![image](https://user-images.githubusercontent.com/55601645/142392500-eda6ed54-1a5e-4c80-9382-307c922db678.png)
 
 # ToDo list: (in roughly priority order)
 - [x] Actual game over screen (display score, restart)
