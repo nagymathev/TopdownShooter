@@ -14,12 +14,15 @@ public class HealthScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerHealthComponent = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+		playerHealthComponent = player ? player.GetComponent<PlayerHealth>() : null;
     }
 
     // Update is called once per frame
     void Update()
     {
+		if (!playerHealthComponent) return;
         healthScore = playerHealthComponent.health;
         healthText.text = healthScore.ToString();
     }

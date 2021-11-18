@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+	public static GameManager singleton;
+
 	public GameObject player;
 	public Score score;
 	public Leaderboard leaderboard;
@@ -48,6 +50,7 @@ public class GameManager : MonoBehaviour
 
 	void Awake()
 	{
+		singleton = this;
 	}
 
 	void Start()
@@ -60,7 +63,10 @@ public class GameManager : MonoBehaviour
 			firstStart = false;
 
 			if (player)
+			{
+				player.SetActive(false);	//hide if from find
 				Destroy(player);
+			}
 			SetState(State.GameOver);
 		} else
 		{
@@ -139,7 +145,8 @@ public class GameManager : MonoBehaviour
 						if (Input.GetKeyDown(KeyCode.Return)
 							|| Input.GetMouseButtonDown(0))
 						{
-							StartCoroutine(Reload());
+							if (!reloading)
+								StartCoroutine(Reload());
 						}
 					}
 				}

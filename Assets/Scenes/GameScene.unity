@@ -640,7 +640,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Version 0.014
+  m_Text: Version 0.015
 --- !u!222 &175475608
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2786,6 +2786,7 @@ MonoBehaviour:
   - {fileID: 8316201619906010803, guid: 6e5584556cccdcc49ae8dda94491f969, type: 3}
   prefab_startGame: {fileID: 4180484257108976777, guid: a3a76757b0b339e4f98a7fbcdf193abd, type: 3}
   prefab_nextWave: {fileID: 4180484257108976777, guid: a3f9397980b598e4e82a1d6e69e69209, type: 3}
+  player: {fileID: 0}
   waves:
   - timeBefore: 3
     timeSpawning: 1
@@ -8841,10 +8842,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8116104558199523584, guid: 8e5cc414aa591ab49956ceb2b4cf0bb0, type: 3}
-      propertyPath: prefabOnDeath
-      value: 
-      objectReference: {fileID: 1040603365283489215, guid: 89d4d42f72f22d54d94f970a882e5dac, type: 3}
     - target: {fileID: 8116104558199523588, guid: 8e5cc414aa591ab49956ceb2b4cf0bb0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8893,10 +8890,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 8116104558199523590, guid: 8e5cc414aa591ab49956ceb2b4cf0bb0, type: 3}
-      propertyPath: defaultWeapon.reloadPrefab
-      value: 
-      objectReference: {fileID: 4180484257108976777, guid: e616423c502e54e4a9386950073fac8d, type: 3}
     - target: {fileID: 8116104558199523642, guid: 8e5cc414aa591ab49956ceb2b4cf0bb0, type: 3}
       propertyPath: m_Name
       value: Player

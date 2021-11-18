@@ -13,9 +13,8 @@ public class RandomEnemySpawner : MonoBehaviour
 	public GameObject prefab_startGame;
 	public GameObject prefab_nextWave;
 
-	//public float timeBetweenEnemy = 5f;
-	//public float maxSpawnRate = 0.5f;
-	//public float spawnRateIncrement = 0.1f;
+	public GameObject player;
+
 	private float countDown;
 
 	//wave definition
@@ -47,8 +46,11 @@ public class RandomEnemySpawner : MonoBehaviour
     {
 		StartWave();
 
-		if (prefab_startGame)
-			Instantiate(prefab_startGame);
+		player = GameObject.FindGameObjectWithTag("Player");
+
+		if (player)
+			if (prefab_startGame)
+				Instantiate(prefab_startGame);
 
 	}
 

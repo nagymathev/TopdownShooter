@@ -172,7 +172,7 @@ MonoBehaviour:
     name: Pistol
     bulletPrefab: {fileID: 1918098929719188104, guid: 658db8156a13fea448f260cbe8396b36, type: 3}
     muzzleFlashPrefab: {fileID: 0}
-    reloadPrefab: {fileID: 4180484257108976777, guid: 326de45d369916c42a25a1b17fbb3ac7, type: 3}
+    reloadPrefab: {fileID: 4180484257108976777, guid: e616423c502e54e4a9386950073fac8d, type: 3}
     bulletSpeed: 10
     spreadAngle: 5
     numBulletsFiredAtOnce: 1
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   prefabOnHurt: {fileID: 1040603365283489215, guid: 2a7f1ff15bba5034f9533c9f45e04800, type: 3}
-  prefabOnDeath: {fileID: 0}
+  prefabOnDeath: {fileID: 7822446599405018407, guid: f42086c70fcb2c0498dec3a2199880ec, type: 3}
 --- !u!1 &8116104558504747476
 GameObject:
   m_ObjectHideFlags: 0

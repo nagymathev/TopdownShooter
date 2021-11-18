@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -8320102380781528936, guid: 4b695eaf809acb543aff18d63bf0843f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -172,7 +172,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 31fff9c64c0655b44bf43c01aa4fa2f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -291,4 +291,4 @@ MonoBehaviour:
   health: 150
   scoreReward: 300
   prefabOnHurt: {fileID: 1040603365283489215, guid: dd62568a0ee4b0945a55e9784d260448, type: 3}
-  prefabOnDeath: {fileID: 1040603365283489215, guid: dac263dda82be5f42a9fcdad92b63e8d, type: 3}
+  prefabOnDeath: {fileID: 7822446599405018407, guid: b68883d13c213384abbc1a4a359a66e3, type: 3}
