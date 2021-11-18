@@ -22,6 +22,7 @@
   -  [ ] footsteps
   -  [x] damage, kills (e.g. bug squeak)
 - [ ] Camera (how should it scale? should we add scrolling? at the very least find a good enough size for fullscreen)
+- [ ] CREDITS and README (can be simply in one file)
 
 # [x] MAKE A BUILD!
 
