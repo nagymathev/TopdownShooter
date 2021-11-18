@@ -30,7 +30,12 @@ public class Enemy : MonoBehaviour
 		if (!target)
 		{
 			if (Random.value < 0.01f)
-				movement = Random.insideUnitCircle;
+			{
+				movement += Random.insideUnitCircle;
+				movement.Normalize();
+			}
+			float _angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg - 90f;
+			rb.rotation = _angle;
 			return;
 		}
 
@@ -47,9 +52,10 @@ public class Enemy : MonoBehaviour
 		}
 
         Vector3 direction = target.transform.position - transform.position;
+
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
-        //direction.Normalize();
+
         movement = direction;
 		movement.Normalize();
     }

@@ -59,9 +59,11 @@ public class Shooting : MonoBehaviour
 
 	public void SetWeapon(WeaponDef def)
     {
-
 		currentWeapon = def;
 		numBullets = currentWeapon.magSize;
+
+		if (currentWeapon.reloadPrefab)
+			Instantiate(currentWeapon.reloadPrefab, firePoint.position, firePoint.rotation);
 	}
 
 	// Update is called once per frame

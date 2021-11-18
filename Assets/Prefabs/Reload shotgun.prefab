@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1220285680542670436}
   - component: {fileID: 8374308728378367139}
   m_Layer: 0
-  m_Name: Reload
+  m_Name: Reload shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

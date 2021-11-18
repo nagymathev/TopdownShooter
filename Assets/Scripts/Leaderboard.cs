@@ -42,7 +42,6 @@ public class Leaderboard: MonoBehaviour
 
 		string URL = "http://www.magicmotiongames.com/gethighscores.php";
 		WWWForm form = new WWWForm();
-        //form.AddField("retrieve_leaderboard", "true");
 
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
         {
@@ -106,9 +105,10 @@ public class Leaderboard: MonoBehaviour
 
 		string URL = "http://www.magicmotiongames.com/addhighscore.php";
 		WWWForm form = new WWWForm();
-        //form.AddField("post_leaderboard", "true");
+
         form.AddField("name", name);
         form.AddField("score", score);
+		//ToDo: wave! playtime! CRC!!!
 
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
         {
