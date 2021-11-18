@@ -1,6 +1,10 @@
 # TopdownShooter
  topdown shooter game with score and increasing difficulty
  
+ Made for GameOffJam 2021
+https://itch.io/jam/game-off-2021
+
+ 
 ![TopDownShooter](https://user-images.githubusercontent.com/55601645/142269876-4591f7ca-fd34-497f-9bab-d690c4cde3d9.png)
 
 # ToDo list: (in roughly priority order)
@@ -22,7 +26,7 @@
   -  [ ] footsteps
   -  [x] damage, kills (e.g. bug squeak)
 - [ ] Camera (how should it scale? should we add scrolling? at the very least find a good enough size for fullscreen)
-- [ ] CREDITS and README (can be simply in one file)
+- [ ] CREDITS and README in the build (can be simply in one file)
 
 # [x] MAKE A BUILD!
 
@@ -45,3 +49,12 @@
 ## Bugs?
 - [x] your points don't reset after you die and press enter to restart
 - [x] HP and the wave counter doesn't change
+
+
+## Credits
+- sound effects
+  - BFXR
+  - Freesound.org
+- Fonts
+  - dafont.com
+
