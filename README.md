@@ -54,7 +54,7 @@ https://itch.io/jam/game-off-2021
 ## Credits
 - sound effects
   - BFXR
-  - Freesound.org
+  - https://freesound.org/
 - Fonts
-  - dafont.com
+  - https://www.dafont.com/
 
