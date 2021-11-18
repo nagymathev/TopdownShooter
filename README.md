@@ -1,12 +1,16 @@
 # TopdownShooter
  topdown shooter game with score and increasing difficulty
  
-![TopDownShooter](https://user-images.githubusercontent.com/55601645/142269876-4591f7ca-fd34-497f-9bab-d690c4cde3d9.png)
+ Made for GameOffJam 2021
+https://itch.io/jam/game-off-2021
+
+ 
+![image](https://user-images.githubusercontent.com/55601645/142392500-eda6ed54-1a5e-4c80-9382-307c922db678.png)
 
 # ToDo list: (in roughly priority order)
 - [x] Actual game over screen (display score, restart)
 - [x] High score list :) (also needs name entry)
-  -   [x] ...online?
+  -   [x] ...online!
 - [ ] Main menu, Intro* or something to let the player know at least the basics: goal, controls, "backstory" :)
 - [x] NAME for the game :)
 - [x] Game balancing, difficulty tweaking (waves timing and difficulty progression, weapons, health, powerups, enemies' speed, health, etc)
@@ -22,6 +26,12 @@
   -  [ ] footsteps
   -  [x] damage, kills (e.g. bug squeak)
 - [ ] Camera (how should it scale? should we add scrolling? at the very least find a good enough size for fullscreen)
+- [ ] powerups to flash before they disappear
+- [ ] health, score etc UI to flash up / shake when change
+- [ ] make player hurt sound clearly recognisable and different from bug hit/kills!
+- [ ] online leaderboard to support querying the RANK of your score (you might be 17th and not on screen, but still an achievement)
+- [ ] play a reload sound when switching (picking up a new) weapon
+- [ ] CREDITS and README in the build (can be simply in one file)
 
 # [x] MAKE A BUILD!
 
@@ -44,3 +54,12 @@
 ## Bugs?
 - [x] your points don't reset after you die and press enter to restart
 - [x] HP and the wave counter doesn't change
+
+
+## Credits
+- sound effects
+  - BFXR
+  - https://freesound.org/
+- Fonts
+  - https://www.dafont.com/
+
