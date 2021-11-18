@@ -27,10 +27,10 @@ https://itch.io/jam/game-off-2021
   -  [x] damage, kills (e.g. bug squeak)
 - [ ] Camera (how should it scale? should we add scrolling? at the very least find a good enough size for fullscreen)
 - [ ] powerups to flash before they disappear
-- [ ] health, score etc UI to flash up / shake when change
+- [x] health, score etc UI to flash up / shake when change
 - [ ] make player hurt sound clearly recognisable and different from bug hit/kills!
 - [ ] online leaderboard to support querying the RANK of your score (you might be 17th and not on screen, but still an achievement)
-- [ ] play a reload sound when switching (picking up a new) weapon
+- [x] play a reload sound when switching (picking up a new) weapon
 - [ ] CREDITS and README in the build (can be simply in one file)
 
 # [x] MAKE A BUILD!
