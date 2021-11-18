@@ -28,6 +28,7 @@ https://itch.io/jam/game-off-2021
 - [ ] Camera (how should it scale? should we add scrolling? at the very least find a good enough size for fullscreen)
 - [ ] powerups to flash before they disappear
 - [ ] health, score etc UI to flash up / shake when change
+- [ ] make player hurt sound clearly recognisable and different from bug hit/kills!
 - [ ] CREDITS and README in the build (can be simply in one file)
 
 # [x] MAKE A BUILD!
