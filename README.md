@@ -10,7 +10,7 @@ https://itch.io/jam/game-off-2021
 # ToDo list: (in roughly priority order)
 - [x] Actual game over screen (display score, restart)
 - [x] High score list :) (also needs name entry)
-  -   [x] ...online?
+  -   [x] ...online!
 - [ ] Main menu, Intro* or something to let the player know at least the basics: goal, controls, "backstory" :)
 - [x] NAME for the game :)
 - [x] Game balancing, difficulty tweaking (waves timing and difficulty progression, weapons, health, powerups, enemies' speed, health, etc)
@@ -29,6 +29,7 @@ https://itch.io/jam/game-off-2021
 - [ ] powerups to flash before they disappear
 - [ ] health, score etc UI to flash up / shake when change
 - [ ] make player hurt sound clearly recognisable and different from bug hit/kills!
+- [ ] online leaderboard to support querying the RANK of your score (you might be 17th and not on screen, but still an achievement)
 - [ ] CREDITS and README in the build (can be simply in one file)
 
 # [x] MAKE A BUILD!
