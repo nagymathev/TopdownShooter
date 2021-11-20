@@ -32,8 +32,6 @@ public class PowerUp : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-
-
         if(lifeTime <= 0) 
         {
             Destroy(this.gameObject);
@@ -41,6 +39,17 @@ public class PowerUp : MonoBehaviour
         else 
         {
             lifeTime -= Time.deltaTime;
+
+			if (lifeTime < 10.0f)
+			{
+				//flash
+				bool show = lifeTime > 3.0f ?
+					  (lifeTime % 0.5f) <= 0.3f
+					: (lifeTime % 0.1f) <= 0.06f;
+				SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
+				foreach (SpriteRenderer sprite in sprites)
+					sprite.enabled = show;
+			}
         }
     }
 
