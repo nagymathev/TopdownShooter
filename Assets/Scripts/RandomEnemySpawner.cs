@@ -38,7 +38,14 @@ public class RandomEnemySpawner : MonoBehaviour
 
 	public float currentWaveTime;
 
+	public float overallTime;
+
 	public List<GameObject> currentEnemies = new List<GameObject>();
+
+	public int GetWaveIndex()
+	{
+		return currentWave + 1 + currentLoop * waves.Count;
+	}
 
 
 	// Start is called before the first frame update
@@ -52,6 +59,7 @@ public class RandomEnemySpawner : MonoBehaviour
 			if (prefab_startGame)
 				Instantiate(prefab_startGame);
 
+		overallTime = 0;
 	}
 
 	void StartWave()
@@ -65,7 +73,7 @@ public class RandomEnemySpawner : MonoBehaviour
 		waveText = text;
 		if (waveText)
 		{
-			waveText.text = string.Format("Wave {0}", currentWave + 1 + currentLoop * waves.Count);
+			waveText.text = string.Format("Wave {0}", GetWaveIndex());// currentWave + 1 + currentLoop * waves.Count);
 		}
 		//ToDo: UI/audio feedback and warning (reward) :)
 	}
@@ -76,6 +84,7 @@ public class RandomEnemySpawner : MonoBehaviour
 		//garbage collection
 		currentEnemies.RemoveAll(a => a == null);
 
+		overallTime += Time.deltaTime;
 
 		if (currentWave >= waves.Count)
 		{

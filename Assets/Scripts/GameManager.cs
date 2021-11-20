@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
 	public Text your_score;
 	public InputField your_name;
 
+	public int last_score;
+	public float last_time;
+	public int last_level;
+
 	public Text scores_names;
 	public Text scores_scores;
 
@@ -163,6 +167,10 @@ public class GameManager : MonoBehaviour
 						Instantiate(prefab_gameOver);
 
 					SetState(State.EnterName);
+
+					last_score = score.score;
+					last_time = spawner.overallTime;
+					last_level = spawner.GetWaveIndex();
 				}
 				break;
 
@@ -170,8 +178,9 @@ public class GameManager : MonoBehaviour
 				root_GameOverScreen.SetActive(true);
 				//root_InGameUI.SetActive(false);
 				root_NameEntry.SetActive(true);
+				root_PressStart.SetActive(false);
 
-				your_score.text = score.score.ToString();
+				your_score.text = last_score.ToString();
 				if (!your_name.isFocused)
 					your_name.Select();
 				if (Input.GetKeyDown(KeyCode.Return))
@@ -212,7 +221,7 @@ public class GameManager : MonoBehaviour
 		if (your_name && !string.IsNullOrEmpty(your_name.text))
 		if (leaderboard && score)
 		{
-			leaderboard.PostScore(your_name.text, score.score);
+			leaderboard.PostScore(your_name.text, last_score, last_time, last_level);
 
 			// wait for the posting to finish before retrieving so we get the new one included
 			yield return new WaitForSecondsRealtime(1.0f);

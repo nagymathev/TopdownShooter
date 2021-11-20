@@ -28,10 +28,10 @@ public class Leaderboard: MonoBehaviour
         return scores;
     }
 
-    public void PostScore(string name, int score)
+    public void PostScore(string name, int score, float time, int level)
     {
 		Debug.Log("Post");
-		StartCoroutine(DoPostScore(name, score));
+		StartCoroutine(DoPostScore(name, score, time, level));
     }
 
     public IEnumerator DoRetrieveScores()
@@ -51,8 +51,8 @@ public class Leaderboard: MonoBehaviour
 			if (www.result != UnityWebRequest.Result.Success)
             {
                 Debug.Log(www.error);
-            }
-            else
+				Debug.Log(www.downloadHandler.text);
+			} else
             {
                 Debug.Log("Successfully retrieved scores!");
                 string contents = www.downloadHandler.text;
@@ -97,20 +97,22 @@ public class Leaderboard: MonoBehaviour
 		scoresWaiting = false;
 	}
 
-	IEnumerator DoPostScore(string name, int score)
+	IEnumerator DoPostScore(string name, int score, float time, int level)
     {
 		Debug.Log("Posting score...");
 
 		scorePosting = true;
 
-		string URL = "http://www.magicmotiongames.com/addhighscore.php";
+		string URL = "http://www.magicmotiongames.com/addhighscore2.php";
 		WWWForm form = new WWWForm();
 
         form.AddField("name", name);
         form.AddField("score", score);
-		//ToDo: wave! playtime! CRC!!!
+		form.AddField("time", time.ToString());
+		form.AddField("level", level);
+		//ToDo: CRC
 
-        using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
+		using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
         {
             yield return www.SendWebRequest();
 
@@ -118,8 +120,8 @@ public class Leaderboard: MonoBehaviour
 			if (www.result != UnityWebRequest.Result.Success)
 			{
                 Debug.Log(www.error);
-            }
-            else
+				Debug.Log(www.downloadHandler.text);
+			} else
             {
                 Debug.Log("Successfully posted score!");
             }
