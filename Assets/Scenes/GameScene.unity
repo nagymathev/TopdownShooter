@@ -2793,6 +2793,7 @@ MonoBehaviour:
     timeAfter: 3
     enemiesPerSecond: 1
     doNotStartUntilFewerThan: 999
+    doStartAfterMaxWait: 15
     spawnPoints:
     - {fileID: 1212661405}
     - {fileID: 1217715718}
@@ -2809,6 +2810,7 @@ MonoBehaviour:
     timeAfter: 3
     enemiesPerSecond: 2
     doNotStartUntilFewerThan: 10
+    doStartAfterMaxWait: 15
     spawnPoints:
     - {fileID: 1212661405}
     - {fileID: 1217715718}
@@ -2825,6 +2827,7 @@ MonoBehaviour:
     timeAfter: 3
     enemiesPerSecond: 1
     doNotStartUntilFewerThan: 10
+    doStartAfterMaxWait: 15
     spawnPoints:
     - {fileID: 1212661405}
     - {fileID: 1217715718}
@@ -2842,6 +2845,7 @@ MonoBehaviour:
     timeAfter: 3
     enemiesPerSecond: 5
     doNotStartUntilFewerThan: 5
+    doStartAfterMaxWait: 15
     spawnPoints:
     - {fileID: 1212661405}
     - {fileID: 1217715718}
@@ -2858,6 +2862,7 @@ MonoBehaviour:
     timeAfter: 3
     enemiesPerSecond: 1
     doNotStartUntilFewerThan: 10
+    doStartAfterMaxWait: 15
     spawnPoints:
     - {fileID: 1212661405}
     - {fileID: 1217715718}
@@ -2874,6 +2879,7 @@ MonoBehaviour:
     timeAfter: 3
     enemiesPerSecond: 2
     doNotStartUntilFewerThan: 3
+    doStartAfterMaxWait: 15
     spawnPoints:
     - {fileID: 1212661405}
     - {fileID: 1217715718}
@@ -2890,6 +2896,7 @@ MonoBehaviour:
   currentWave: 0
   currentLoop: 0
   currentWaveTime: 0
+  overallTime: 0
   currentEnemies: []
 --- !u!4 &1399337017
 Transform:
@@ -3317,6 +3324,9 @@ MonoBehaviour:
   prefab_gameOver: {fileID: 4180484257108976777, guid: f00fe070c16831e4c9d5fd8f71bb8564, type: 3}
   your_score: {fileID: 17903817}
   your_name: {fileID: 1927472479}
+  last_score: 0
+  last_time: 0
+  last_level: 0
   scores_names: {fileID: 2002426447}
   scores_scores: {fileID: 306919383}
   ui_wave_text: {fileID: 1454503845}

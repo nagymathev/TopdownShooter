@@ -26,7 +26,8 @@ public class RandomEnemySpawner : MonoBehaviour
 		public float timeAfter;
 		//public float timeBetweenEnemy;
 		public float enemiesPerSecond;
-		public int doNotStartUntilFewerThan;
+		public int doNotStartUntilFewerThan;	//do not start NEXT wave
+		public float doStartAfterMaxWait;		//also
 
 		public Transform[] spawnPoints;
 		public GameObject[] enemyPrefabs;
@@ -128,7 +129,11 @@ public class RandomEnemySpawner : MonoBehaviour
 		if (currentWaveTime >= wave.timeBefore + wave.timeSpawning + wave.timeAfter)
 		{
 			bool okToStart = true;
-			if(wave.doNotStartUntilFewerThan >= 0)
+			if (currentWaveTime >= wave.timeBefore + wave.timeSpawning + wave.timeAfter + wave.doStartAfterMaxWait)
+			{
+				okToStart = true;
+			} else
+			if (wave.doNotStartUntilFewerThan >= 0)
 			{
 				//check if the number of existing enemies are zero and return if it isn't
 				if (!(currentEnemies.Count < wave.doNotStartUntilFewerThan))

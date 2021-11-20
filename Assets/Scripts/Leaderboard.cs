@@ -101,31 +101,38 @@ public class Leaderboard: MonoBehaviour
     {
 		Debug.Log("Posting score...");
 
+		int retryCount = 3;
 		scorePosting = true;
 
-		string URL = "http://www.magicmotiongames.com/addhighscore2.php";
-		WWWForm form = new WWWForm();
+		while (retryCount >= 0)
+		{
+			string URL = "http://www.magicmotiongames.com/addhighscore2.php";
+			WWWForm form = new WWWForm();
 
-        form.AddField("name", name);
-        form.AddField("score", score);
-		form.AddField("time", time.ToString());
-		form.AddField("level", level);
-		//ToDo: CRC
+			form.AddField("name", name);
+			form.AddField("score", score);
+			form.AddField("time", time.ToString());
+			form.AddField("level", level);
+			//ToDo: CRC
 
-		using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
-        {
-            yield return www.SendWebRequest();
-
-			//if (www.isNetworkError || www.isHttpError)
-			if (www.result != UnityWebRequest.Result.Success)
+			using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
 			{
-                Debug.Log(www.error);
-				Debug.Log(www.downloadHandler.text);
-			} else
-            {
-                Debug.Log("Successfully posted score!");
-            }
-        }
+				yield return www.SendWebRequest();
+
+				//if (www.isNetworkError || www.isHttpError)
+				if (www.result != UnityWebRequest.Result.Success)
+				{
+					Debug.Log(www.error);
+					Debug.Log(www.downloadHandler.text);
+					retryCount--;
+					Debug.Log("RETRY " + retryCount + "...");
+				} else
+				{
+					Debug.Log("Successfully posted score!");
+					retryCount = -1;
+				}
+			}
+		}
 
 		scorePosting = false;
 	}
